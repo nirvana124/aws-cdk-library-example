@@ -1,0 +1,161 @@
+{
+  "Resources": {
+    "testqueueA58C838B": {
+      "Type": "AWS::SQS::Queue",
+      "Properties": {
+        "QueueName": "test-queue",
+        "RedrivePolicy": {
+          "deadLetterTargetArn": {
+            "Fn::GetAtt": [
+              "testqueueTESTDLQ243D98C6",
+              "Arn"
+            ]
+          },
+          "maxReceiveCount": 3
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "org-defaults-example/test-queue/Resource"
+      }
+    },
+    "testqueueTESTDLQ243D98C6": {
+      "Type": "AWS::SQS::Queue",
+      "Properties": {
+        "QueueName": {
+          "Fn::Join": [
+            "",
+            [
+              {
+                "Fn::GetAtt": [
+                  "testqueueA58C838B",
+                  "QueueName"
+                ]
+              },
+              "-DLQ"
+            ]
+          ]
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "org-defaults-example/test-queue/TEST-DLQ/Resource"
+      }
+    },
+    "testtopicB3D54793": {
+      "Type": "AWS::SNS::Topic",
+      "Properties": {
+        "TopicName": "test-topic"
+      },
+      "Metadata": {
+        "aws:cdk:path": "org-defaults-example/test-topic/Resource"
+      }
+    },
+    "TestRestApiB7B4EFDA": {
+      "Type": "AWS::ApiGateway::RestApi",
+      "Properties": {
+        "Name": "TestRestApi"
+      },
+      "Metadata": {
+        "aws:cdk:path": "org-defaults-example/TestRestApi/Resource"
+      }
+    },
+    "TestRestApiDeploymentE31B126538a5b3c12f0c6dee832200ef1be86381": {
+      "Type": "AWS::ApiGateway::Deployment",
+      "Properties": {
+        "RestApiId": {
+          "Ref": "TestRestApiB7B4EFDA"
+        },
+        "Description": "Automatically created by the RestApi construct"
+      },
+      "DependsOn": [
+        "TestRestApiGET57669C27"
+      ],
+      "Metadata": {
+        "aws:cdk:path": "org-defaults-example/TestRestApi/Deployment/Resource"
+      }
+    },
+    "TestRestApiDeploymentStageprod714523E6": {
+      "Type": "AWS::ApiGateway::Stage",
+      "Properties": {
+        "RestApiId": {
+          "Ref": "TestRestApiB7B4EFDA"
+        },
+        "DeploymentId": {
+          "Ref": "TestRestApiDeploymentE31B126538a5b3c12f0c6dee832200ef1be86381"
+        },
+        "StageName": "prod"
+      },
+      "Metadata": {
+        "aws:cdk:path": "org-defaults-example/TestRestApi/DeploymentStage.prod/Resource"
+      }
+    },
+    "TestRestApiGET57669C27": {
+      "Type": "AWS::ApiGateway::Method",
+      "Properties": {
+        "HttpMethod": "GET",
+        "ResourceId": {
+          "Fn::GetAtt": [
+            "TestRestApiB7B4EFDA",
+            "RootResourceId"
+          ]
+        },
+        "RestApiId": {
+          "Ref": "TestRestApiB7B4EFDA"
+        },
+        "AuthorizationType": "NONE",
+        "Integration": {
+          "Type": "MOCK"
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "org-defaults-example/TestRestApi/Default/GET/Resource"
+      }
+    }
+  },
+  "Outputs": {
+    "TestRestApiEndpoint8BFE3226": {
+      "Value": {
+        "Fn::Join": [
+          "",
+          [
+            "https://",
+            {
+              "Ref": "TestRestApiB7B4EFDA"
+            },
+            ".execute-api.",
+            {
+              "Ref": "AWS::Region"
+            },
+            ".",
+            {
+              "Ref": "AWS::URLSuffix"
+            },
+            "/",
+            {
+              "Ref": "TestRestApiDeploymentStageprod714523E6"
+            },
+            "/"
+          ]
+        ]
+      }
+    },
+    "TestRestApiApiOutputF76ADE54": {
+      "Description": "Testing description",
+      "Value": {
+        "Ref": "TestRestApiB7B4EFDA"
+      },
+      "Export": {
+        "Name": {
+          "Fn::Join": [
+            "",
+            [
+              {
+                "Ref": "TestRestApiB7B4EFDA"
+              },
+              "-test-out"
+            ]
+          ]
+        }
+      }
+    }
+  }
+}

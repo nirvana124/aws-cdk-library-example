@@ -1,0 +1,284 @@
+{
+  "version": "1.33.0",
+  "artifacts": {
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    },
+    "org-defaults-example": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://unknown-account/unknown-region",
+      "properties": {
+        "templateFile": "org-defaults-example.template.json"
+      },
+      "metadata": {
+        "/org-defaults-example/test-queue/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "testqueueA58C838B",
+            "trace": [
+              "new Queue (D:\\aws\\MyProjects\\aws-cdk-library-example\\node_modules\\@aws-cdk\\aws-sqs\\lib\\queue.ts:257:19)",
+              "new TestStack (D:\\aws\\MyProjects\\aws-cdk-library-example\\example\\index.ts:11:9)",
+              "new TestApp (D:\\aws\\MyProjects\\aws-cdk-library-example\\example\\index.ts:21:9)",
+              "Object.<anonymous> (D:\\aws\\MyProjects\\aws-cdk-library-example\\example\\index.ts:25:13)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Module.m._compile (C:\\Users\\SAKSOFT117\\AppData\\Roaming\\npm-cache\\_npx\\6200\\node_modules\\ts-node\\src\\index.ts:839:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Object.require.extensions.<computed> [as .ts] (C:\\Users\\SAKSOFT117\\AppData\\Roaming\\npm-cache\\_npx\\6200\\node_modules\\ts-node\\src\\index.ts:842:12)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "main (C:\\Users\\SAKSOFT117\\AppData\\Roaming\\npm-cache\\_npx\\6200\\node_modules\\ts-node\\src\\bin.ts:227:14)",
+              "Object.<anonymous> (C:\\Users\\SAKSOFT117\\AppData\\Roaming\\npm-cache\\_npx\\6200\\node_modules\\ts-node\\src\\bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\libnpx\\index.js:268:14"
+            ]
+          }
+        ],
+        "/org-defaults-example/test-queue/TEST-DLQ/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "testqueueTESTDLQ243D98C6",
+            "trace": [
+              "new Queue (D:\\aws\\MyProjects\\aws-cdk-library-example\\node_modules\\@aws-cdk\\aws-sqs\\lib\\queue.ts:257:19)",
+              "MyOrgQueueDefaultsAspect.createDLQ (D:\\aws\\MyProjects\\aws-cdk-library-example\\lib\\my-org-defaults-aspects.ts:54:20)",
+              "MyOrgQueueDefaultsAspect.visit (D:\\aws\\MyProjects\\aws-cdk-library-example\\lib\\my-org-defaults-aspects.ts:39:38)",
+              "D:\\aws\\MyProjects\\aws-cdk-library-example\\node_modules\\constructs\\lib\\construct.ts:502:44",
+              "Array.forEach (<anonymous>)",
+              "Node.invokeAspects (D:\\aws\\MyProjects\\aws-cdk-library-example\\node_modules\\constructs\\lib\\construct.ts:502:19)",
+              "Node.prepare (D:\\aws\\MyProjects\\aws-cdk-library-example\\node_modules\\constructs\\lib\\construct.ts:420:26)",
+              "Node.synthesize (D:\\aws\\MyProjects\\aws-cdk-library-example\\node_modules\\constructs\\lib\\construct.ts:386:10)",
+              "Function.synth (D:\\aws\\MyProjects\\aws-cdk-library-example\\node_modules\\@aws-cdk\\core\\lib\\construct-compat.ts:231:22)",
+              "TestApp.synth (D:\\aws\\MyProjects\\aws-cdk-library-example\\node_modules\\@aws-cdk\\core\\lib\\app.ts:142:36)",
+              "process.<anonymous> (D:\\aws\\MyProjects\\aws-cdk-library-example\\node_modules\\@aws-cdk\\core\\lib\\app.ts:121:45)",
+              "Object.onceWrapper (events.js:418:26)",
+              "process.emit (events.js:311:20)",
+              "process.EventEmitter.emit (domain.js:482:12)",
+              "process.emit (C:\\Users\\SAKSOFT117\\AppData\\Roaming\\npm-cache\\_npx\\6200\\node_modules\\ts-node\\node_modules\\source-map-support\\source-map-support.js:495:21)",
+              "process.topLevelDomainCallback (domain.js:137:15)"
+            ]
+          }
+        ],
+        "/org-defaults-example/test-topic/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "testtopicB3D54793",
+            "trace": [
+              "new Topic (D:\\aws\\MyProjects\\aws-cdk-library-example\\node_modules\\@aws-cdk\\aws-sns\\lib\\topic.ts:61:22)",
+              "new TestStack (D:\\aws\\MyProjects\\aws-cdk-library-example\\example\\index.ts:12:9)",
+              "new TestApp (D:\\aws\\MyProjects\\aws-cdk-library-example\\example\\index.ts:21:9)",
+              "Object.<anonymous> (D:\\aws\\MyProjects\\aws-cdk-library-example\\example\\index.ts:25:13)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Module.m._compile (C:\\Users\\SAKSOFT117\\AppData\\Roaming\\npm-cache\\_npx\\6200\\node_modules\\ts-node\\src\\index.ts:839:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Object.require.extensions.<computed> [as .ts] (C:\\Users\\SAKSOFT117\\AppData\\Roaming\\npm-cache\\_npx\\6200\\node_modules\\ts-node\\src\\index.ts:842:12)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "main (C:\\Users\\SAKSOFT117\\AppData\\Roaming\\npm-cache\\_npx\\6200\\node_modules\\ts-node\\src\\bin.ts:227:14)",
+              "Object.<anonymous> (C:\\Users\\SAKSOFT117\\AppData\\Roaming\\npm-cache\\_npx\\6200\\node_modules\\ts-node\\src\\bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\libnpx\\index.js:268:14"
+            ]
+          }
+        ],
+        "/org-defaults-example/TestRestApi/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "TestRestApiB7B4EFDA",
+            "trace": [
+              "new RestApi (D:\\aws\\MyProjects\\aws-cdk-library-example\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\restapi.ts:238:22)",
+              "new TestStack (D:\\aws\\MyProjects\\aws-cdk-library-example\\example\\index.ts:13:21)",
+              "new TestApp (D:\\aws\\MyProjects\\aws-cdk-library-example\\example\\index.ts:21:9)",
+              "Object.<anonymous> (D:\\aws\\MyProjects\\aws-cdk-library-example\\example\\index.ts:25:13)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Module.m._compile (C:\\Users\\SAKSOFT117\\AppData\\Roaming\\npm-cache\\_npx\\6200\\node_modules\\ts-node\\src\\index.ts:839:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Object.require.extensions.<computed> [as .ts] (C:\\Users\\SAKSOFT117\\AppData\\Roaming\\npm-cache\\_npx\\6200\\node_modules\\ts-node\\src\\index.ts:842:12)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "main (C:\\Users\\SAKSOFT117\\AppData\\Roaming\\npm-cache\\_npx\\6200\\node_modules\\ts-node\\src\\bin.ts:227:14)",
+              "Object.<anonymous> (C:\\Users\\SAKSOFT117\\AppData\\Roaming\\npm-cache\\_npx\\6200\\node_modules\\ts-node\\src\\bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\libnpx\\index.js:268:14"
+            ]
+          }
+        ],
+        "/org-defaults-example/TestRestApi/Deployment/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "TestRestApiDeploymentE31B126538a5b3c12f0c6dee832200ef1be86381",
+            "trace": [
+              "new Deployment (D:\\aws\\MyProjects\\aws-cdk-library-example\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\deployment.ts:69:21)",
+              "RestApi.configureDeployment (D:\\aws\\MyProjects\\aws-cdk-library-example\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\restapi.ts:408:32)",
+              "new RestApi (D:\\aws\\MyProjects\\aws-cdk-library-example\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\restapi.ts:254:10)",
+              "new TestStack (D:\\aws\\MyProjects\\aws-cdk-library-example\\example\\index.ts:13:21)",
+              "new TestApp (D:\\aws\\MyProjects\\aws-cdk-library-example\\example\\index.ts:21:9)",
+              "Object.<anonymous> (D:\\aws\\MyProjects\\aws-cdk-library-example\\example\\index.ts:25:13)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Module.m._compile (C:\\Users\\SAKSOFT117\\AppData\\Roaming\\npm-cache\\_npx\\6200\\node_modules\\ts-node\\src\\index.ts:839:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Object.require.extensions.<computed> [as .ts] (C:\\Users\\SAKSOFT117\\AppData\\Roaming\\npm-cache\\_npx\\6200\\node_modules\\ts-node\\src\\index.ts:842:12)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "main (C:\\Users\\SAKSOFT117\\AppData\\Roaming\\npm-cache\\_npx\\6200\\node_modules\\ts-node\\src\\bin.ts:227:14)",
+              "Object.<anonymous> (C:\\Users\\SAKSOFT117\\AppData\\Roaming\\npm-cache\\_npx\\6200\\node_modules\\ts-node\\src\\bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\libnpx\\index.js:268:14"
+            ]
+          }
+        ],
+        "/org-defaults-example/TestRestApi/DeploymentStage.prod/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "TestRestApiDeploymentStageprod714523E6",
+            "trace": [
+              "new Stage (D:\\aws\\MyProjects\\aws-cdk-library-example\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\stage.ts:236:22)",
+              "RestApi.configureDeployment (D:\\aws\\MyProjects\\aws-cdk-library-example\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\restapi.ts:418:30)",
+              "new RestApi (D:\\aws\\MyProjects\\aws-cdk-library-example\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\restapi.ts:254:10)",
+              "new TestStack (D:\\aws\\MyProjects\\aws-cdk-library-example\\example\\index.ts:13:21)",
+              "new TestApp (D:\\aws\\MyProjects\\aws-cdk-library-example\\example\\index.ts:21:9)",
+              "Object.<anonymous> (D:\\aws\\MyProjects\\aws-cdk-library-example\\example\\index.ts:25:13)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Module.m._compile (C:\\Users\\SAKSOFT117\\AppData\\Roaming\\npm-cache\\_npx\\6200\\node_modules\\ts-node\\src\\index.ts:839:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Object.require.extensions.<computed> [as .ts] (C:\\Users\\SAKSOFT117\\AppData\\Roaming\\npm-cache\\_npx\\6200\\node_modules\\ts-node\\src\\index.ts:842:12)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "main (C:\\Users\\SAKSOFT117\\AppData\\Roaming\\npm-cache\\_npx\\6200\\node_modules\\ts-node\\src\\bin.ts:227:14)",
+              "Object.<anonymous> (C:\\Users\\SAKSOFT117\\AppData\\Roaming\\npm-cache\\_npx\\6200\\node_modules\\ts-node\\src\\bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\libnpx\\index.js:268:14"
+            ]
+          }
+        ],
+        "/org-defaults-example/TestRestApi/Endpoint": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "TestRestApiEndpoint8BFE3226",
+            "trace": [
+              "RestApi.configureDeployment (D:\\aws\\MyProjects\\aws-cdk-library-example\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\restapi.ts:423:7)",
+              "new RestApi (D:\\aws\\MyProjects\\aws-cdk-library-example\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\restapi.ts:254:10)",
+              "new TestStack (D:\\aws\\MyProjects\\aws-cdk-library-example\\example\\index.ts:13:21)",
+              "new TestApp (D:\\aws\\MyProjects\\aws-cdk-library-example\\example\\index.ts:21:9)",
+              "Object.<anonymous> (D:\\aws\\MyProjects\\aws-cdk-library-example\\example\\index.ts:25:13)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Module.m._compile (C:\\Users\\SAKSOFT117\\AppData\\Roaming\\npm-cache\\_npx\\6200\\node_modules\\ts-node\\src\\index.ts:839:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Object.require.extensions.<computed> [as .ts] (C:\\Users\\SAKSOFT117\\AppData\\Roaming\\npm-cache\\_npx\\6200\\node_modules\\ts-node\\src\\index.ts:842:12)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "main (C:\\Users\\SAKSOFT117\\AppData\\Roaming\\npm-cache\\_npx\\6200\\node_modules\\ts-node\\src\\bin.ts:227:14)",
+              "Object.<anonymous> (C:\\Users\\SAKSOFT117\\AppData\\Roaming\\npm-cache\\_npx\\6200\\node_modules\\ts-node\\src\\bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\libnpx\\index.js:268:14"
+            ]
+          }
+        ],
+        "/org-defaults-example/TestRestApi/Default/GET/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "TestRestApiGET57669C27",
+            "trace": [
+              "new Method (D:\\aws\\MyProjects\\aws-cdk-library-example\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\method.ts:176:22)",
+              "RootResource.addMethod (D:\\aws\\MyProjects\\aws-cdk-library-example\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\resource.ts:175:12)",
+              "new TestStack (D:\\aws\\MyProjects\\aws-cdk-library-example\\example\\index.ts:14:18)",
+              "new TestApp (D:\\aws\\MyProjects\\aws-cdk-library-example\\example\\index.ts:21:9)",
+              "Object.<anonymous> (D:\\aws\\MyProjects\\aws-cdk-library-example\\example\\index.ts:25:13)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Module.m._compile (C:\\Users\\SAKSOFT117\\AppData\\Roaming\\npm-cache\\_npx\\6200\\node_modules\\ts-node\\src\\index.ts:839:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Object.require.extensions.<computed> [as .ts] (C:\\Users\\SAKSOFT117\\AppData\\Roaming\\npm-cache\\_npx\\6200\\node_modules\\ts-node\\src\\index.ts:842:12)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "main (C:\\Users\\SAKSOFT117\\AppData\\Roaming\\npm-cache\\_npx\\6200\\node_modules\\ts-node\\src\\bin.ts:227:14)",
+              "Object.<anonymous> (C:\\Users\\SAKSOFT117\\AppData\\Roaming\\npm-cache\\_npx\\6200\\node_modules\\ts-node\\src\\bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1158:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)",
+              "Module.load (internal/modules/cjs/loader.js:1002:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:901:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)",
+              "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\libnpx\\index.js:268:14"
+            ]
+          }
+        ],
+        "/org-defaults-example/TestRestApi/ApiOutput": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "TestRestApiApiOutputF76ADE54",
+            "trace": [
+              "MyOrgRestApiDefaultsAspect.visit (D:\\aws\\MyProjects\\aws-cdk-library-example\\lib\\my-org-defaults-aspects.ts:76:13)",
+              "D:\\aws\\MyProjects\\aws-cdk-library-example\\node_modules\\constructs\\lib\\construct.ts:502:44",
+              "Array.forEach (<anonymous>)",
+              "Node.invokeAspects (D:\\aws\\MyProjects\\aws-cdk-library-example\\node_modules\\constructs\\lib\\construct.ts:502:19)",
+              "Node.prepare (D:\\aws\\MyProjects\\aws-cdk-library-example\\node_modules\\constructs\\lib\\construct.ts:420:26)",
+              "Node.synthesize (D:\\aws\\MyProjects\\aws-cdk-library-example\\node_modules\\constructs\\lib\\construct.ts:386:10)",
+              "Function.synth (D:\\aws\\MyProjects\\aws-cdk-library-example\\node_modules\\@aws-cdk\\core\\lib\\construct-compat.ts:231:22)",
+              "TestApp.synth (D:\\aws\\MyProjects\\aws-cdk-library-example\\node_modules\\@aws-cdk\\core\\lib\\app.ts:142:36)",
+              "process.<anonymous> (D:\\aws\\MyProjects\\aws-cdk-library-example\\node_modules\\@aws-cdk\\core\\lib\\app.ts:121:45)",
+              "Object.onceWrapper (events.js:418:26)",
+              "process.emit (events.js:311:20)",
+              "process.EventEmitter.emit (domain.js:482:12)",
+              "process.emit (C:\\Users\\SAKSOFT117\\AppData\\Roaming\\npm-cache\\_npx\\6200\\node_modules\\ts-node\\node_modules\\source-map-support\\source-map-support.js:495:21)",
+              "process.topLevelDomainCallback (domain.js:137:15)"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "runtime": {
+    "libraries": {
+      "@aws-cdk/core": "1.34.0",
+      "@aws-cdk/cx-api": "1.34.0",
+      "@aws-cdk/cloud-assembly-schema": "1.34.0",
+      "@aws-cdk/aws-sqs": "1.34.0",
+      "@aws-cdk/aws-iam": "1.34.0",
+      "@aws-cdk/region-info": "1.34.0",
+      "@aws-cdk/aws-kms": "1.34.0",
+      "@aws-cdk/aws-cloudwatch": "1.34.0",
+      "@aws-cdk/aws-sns": "1.34.1",
+      "@aws-cdk/aws-apigateway": "1.34.1",
+      "@aws-cdk/aws-lambda": "1.34.0",
+      "@aws-cdk/aws-ec2": "1.34.0",
+      "@aws-cdk/aws-ssm": "1.34.0",
+      "@aws-cdk/aws-logs": "1.34.0",
+      "@aws-cdk/aws-s3": "1.34.0",
+      "@aws-cdk/aws-events": "1.34.0",
+      "@aws-cdk/aws-s3-assets": "1.34.0",
+      "@aws-cdk/assets": "1.34.0",
+      "jsii-runtime": "node.js/v12.16.1"
+    }
+  }
+}

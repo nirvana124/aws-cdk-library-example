@@ -1,0 +1,189 @@
+{
+  "version": "tree-0.1",
+  "tree": {
+    "id": "App",
+    "path": "",
+    "children": {
+      "Tree": {
+        "id": "Tree",
+        "path": "Tree"
+      },
+      "org-defaults-example": {
+        "id": "org-defaults-example",
+        "path": "org-defaults-example",
+        "children": {
+          "test-queue": {
+            "id": "test-queue",
+            "path": "org-defaults-example/test-queue",
+            "children": {
+              "Resource": {
+                "id": "Resource",
+                "path": "org-defaults-example/test-queue/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::SQS::Queue",
+                  "aws:cdk:cloudformation:props": {
+                    "queueName": "test-queue",
+                    "redrivePolicy": {
+                      "deadLetterTargetArn": {
+                        "Fn::GetAtt": [
+                          "testqueueTESTDLQ243D98C6",
+                          "Arn"
+                        ]
+                      },
+                      "maxReceiveCount": 3
+                    }
+                  }
+                }
+              },
+              "TEST-DLQ": {
+                "id": "TEST-DLQ",
+                "path": "org-defaults-example/test-queue/TEST-DLQ",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "org-defaults-example/test-queue/TEST-DLQ/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::SQS::Queue",
+                      "aws:cdk:cloudformation:props": {
+                        "queueName": {
+                          "Fn::Join": [
+                            "",
+                            [
+                              {
+                                "Fn::GetAtt": [
+                                  "testqueueA58C838B",
+                                  "QueueName"
+                                ]
+                              },
+                              "-DLQ"
+                            ]
+                          ]
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "test-topic": {
+            "id": "test-topic",
+            "path": "org-defaults-example/test-topic",
+            "children": {
+              "Resource": {
+                "id": "Resource",
+                "path": "org-defaults-example/test-topic/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::SNS::Topic",
+                  "aws:cdk:cloudformation:props": {
+                    "topicName": "test-topic"
+                  }
+                }
+              }
+            }
+          },
+          "TestRestApi": {
+            "id": "TestRestApi",
+            "path": "org-defaults-example/TestRestApi",
+            "children": {
+              "Resource": {
+                "id": "Resource",
+                "path": "org-defaults-example/TestRestApi/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::ApiGateway::RestApi",
+                  "aws:cdk:cloudformation:props": {
+                    "name": "TestRestApi"
+                  }
+                }
+              },
+              "Deployment": {
+                "id": "Deployment",
+                "path": "org-defaults-example/TestRestApi/Deployment",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "org-defaults-example/TestRestApi/Deployment/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::ApiGateway::Deployment",
+                      "aws:cdk:cloudformation:props": {
+                        "restApiId": {
+                          "Ref": "TestRestApiB7B4EFDA"
+                        },
+                        "description": "Automatically created by the RestApi construct"
+                      }
+                    }
+                  }
+                }
+              },
+              "DeploymentStage.prod": {
+                "id": "DeploymentStage.prod",
+                "path": "org-defaults-example/TestRestApi/DeploymentStage.prod",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "org-defaults-example/TestRestApi/DeploymentStage.prod/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::ApiGateway::Stage",
+                      "aws:cdk:cloudformation:props": {
+                        "restApiId": {
+                          "Ref": "TestRestApiB7B4EFDA"
+                        },
+                        "deploymentId": {
+                          "Ref": "TestRestApiDeploymentE31B126538a5b3c12f0c6dee832200ef1be86381"
+                        },
+                        "stageName": "prod"
+                      }
+                    }
+                  }
+                }
+              },
+              "Endpoint": {
+                "id": "Endpoint",
+                "path": "org-defaults-example/TestRestApi/Endpoint"
+              },
+              "Default": {
+                "id": "Default",
+                "path": "org-defaults-example/TestRestApi/Default",
+                "children": {
+                  "GET": {
+                    "id": "GET",
+                    "path": "org-defaults-example/TestRestApi/Default/GET",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "org-defaults-example/TestRestApi/Default/GET/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::ApiGateway::Method",
+                          "aws:cdk:cloudformation:props": {
+                            "httpMethod": "GET",
+                            "resourceId": {
+                              "Fn::GetAtt": [
+                                "TestRestApiB7B4EFDA",
+                                "RootResourceId"
+                              ]
+                            },
+                            "restApiId": {
+                              "Ref": "TestRestApiB7B4EFDA"
+                            },
+                            "authorizationType": "NONE",
+                            "integration": {
+                              "type": "MOCK"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "ApiOutput": {
+                "id": "ApiOutput",
+                "path": "org-defaults-example/TestRestApi/ApiOutput"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
